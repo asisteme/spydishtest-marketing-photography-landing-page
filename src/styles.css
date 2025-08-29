@@ -1,0 +1,240 @@
+:root {
+  --bg-light: #f1f1f6;
+  --primary: #4c4c96;
+  --secondary: #323261;
+  --accent: #ff8a5c;
+  --text: #2b2b2b;
+  --radius: 8px;
+  --max-width: 1200px;
+}
+
+/* Reset & base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg-light);
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+/* Layout helpers */
+.container {
+  width: min(90%, var(--max-width));
+  margin-inline: auto;
+}
+.grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+.grid.reverse {
+  grid-auto-flow: dense;
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s;
+  text-align: center;
+}
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn.primary:hover {
+  background: var(--secondary);
+}
+.btn.secondary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn.secondary:hover {
+  opacity: 0.9;
+}
+.btn.big {
+  font-size: 1.1rem;
+  padding: 1rem 2.2rem;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url("https://images.pexels.com/photos/1025804/pexels-photo-1025804.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600")
+    center/cover no-repeat;
+  color: #fff;
+  padding-block: 6rem 8rem;
+  text-align: center;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(50, 50, 97, 0.6);
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+.logo img {
+  height: 40px;
+  width: 40px;
+}
+.hero-content {
+  margin-top: 4rem;
+  max-width: 700px;
+  margin-inline: auto;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 2rem;
+}
+
+/* Sections */
+.strip {
+  padding-block: 4rem;
+}
+.strip.alt {
+  background: #fff;
+}
+.section-title {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+.highlight {
+  color: var(--accent);
+}
+.list {
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.mockup {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0 0 0 / 0.08);
+}
+
+/* Testimonials */
+.testimonials .cards {
+  display: grid;
+  gap: 2rem;
+}
+@media (min-width: 768px) {
+  .testimonials .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.testimonials blockquote {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  font-style: italic;
+}
+.testimonials footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+  max-width: 600px;
+}
+.contact-form {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d3d3d3;
+  border-radius: var(--radius);
+  font-size: 1rem;
+}
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Footer */
+.footer {
+  background: var(--secondary);
+  color: #fff;
+  padding-block: 2.5rem;
+}
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (min-width: 600px) {
+  .footer-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.footer-logo {
+  color: #fff;
+}
+.footer .small {
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+}
+.social {
+  display: flex;
+  gap: 1.2rem;
+}
+.social a {
+  color: #fff;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.social a:hover {
+  opacity: 0.8;
+}
